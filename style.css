@@ -1,0 +1,36 @@
+h1 {
+    color: teal;
+	
+};
+.grid {
+    /* margin: auto; */
+    display: flex;
+    flex-direction: row;
+    /* height: 400px;
+    width: 400px;
+    background-color:yellow;
+    align-content: center;
+    justify-content: flex-end; */
+    
+}
+
+/* .alpha {
+    background-color: teal;
+    /* height: 30px;
+    width: 30px;
+    margin: 5px;
+    /* flex-flow: column wrap; */
+    /* text-align: center;
+    vertical-align: center;  */
+    /* border: 1px solid black;  */
+/* }  */
+
+.column1 {
+    width: 50%;
+    background-color: teal;
+    /* height: 100vh; */
+}
+.column2 {
+    width: 50%;
+    background-color: yellow;
+}
