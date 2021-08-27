@@ -1,36 +1,102 @@
 body {
-    background-image: url(https://i.pinimg.com/originals/19/b2/95/19b295386506efc12fa9e051d4fa3742.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    /* background: black; */
-  
+	background-image: url(https://i.pinimg.com/originals/19/b2/95/19b295386506efc12fa9e051d4fa3742.jpg);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	/* margin: 145px 0 0 0; */
+	/* background: black; */
+	height: 100vh;
 }
 h1 {
-    text-align: center;
-    margin: 50px auto;
+	text-align: center;
+	margin: 30px auto 0px auto;
 }
 .flex-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    width: 98vw;
-    height: 80vh;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	width: 96vw;
+	height: 80vh;
 }
 
 .flex-left {
-    width: 50px;
-    
+	width: 50px;
 }
 
 .flex-right {
-    width: 50px;
-    
+	width: 50px;
 }
 .alpha {
-    background-color: teal;
-    border: 1px solid black;
-    height: 5.9vh;
-    text-align: center;
-    font-size: 24px;
+	background-color: teal;
+	border: 1px solid black;
+	height: 5.5vh;
+	text-align: center;
+	font-size: 24px;
+	margin: 2px;
+}
+.flex-container2 {
+	/* background-color: purple; */
+	width: 80vw;
+	display: flex;
+	flex-direction: column;
+}
+.flex-up {
+	border: 2px solid white;
+	width: 80vw;
+	height: 50vh;
+}
+.flex-down {
+	border: 2px solid white;
+	width: 80vw;
+	height: 30vh;
+}
+
+.clicked {
+	background-color: purple;
+	border: 1px solid black;
+	height: 5.5vh;
+	text-align: center;
+	font-size: 24px;
+	margin: 2px;
+}
+.wrong {
+	background-color: rgb(75, 4, 4);
+}
+footer {
+	display: block;
+	/* margin: 0px auto 0px 10px; */
+}
+.minionImage {
+	/* position: center; */
+	margin: 100px 150px;
+	width: 50%;
+	height: 70%;
+	/* position: relative; */
+}
+
+.footer {
+	display: flex;
+	/* justify-content: center; */
+}
+.menuButton {
+	width: 150px;
+	height: 30px;
+	margin: 50px 120px 10px 10px;
+}
+.chancesLeft {
+	margin: 50px;
+}
+.flex-down {
+	display: flex;
+	justify-content: center;
+}
+.dashes {
+	/* align-content: center; */
+	height: 50px;
+	width: 50px;
+	background-color: royalblue;
+	border: 2px solid black;
+	margin: 2rem 5px;
+	font-size: 40px;
+	text-align: center;
 }
