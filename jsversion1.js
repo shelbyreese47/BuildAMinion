@@ -1,4 +1,4 @@
-//DOM ELEMENTS TO GRAB//
+/*-----------------------------------DOM ELEMENTS TO GRAB-----------------------------------*/
 // I need to grab:
 // Menu Button
 const menuButton = document.querySelector('menuButton');
@@ -7,6 +7,8 @@ const flex = document.querySelector('.flex-container');
 const minionImage = document.querySelector('.minionImage');
 const chancesLeftBoard = document.querySelector('.chancesLeft');
 const flexDown = document.querySelector('.flex-down');
+const gameCountEl = document.querySelector('.gameCount');
+const scoreEl = document.querySelector('.score');
 
 const minionStep = [
 	'https://i.ibb.co/PWKSXMD/Minion-Body-1.png',
@@ -18,7 +20,8 @@ const minionStep = [
 	'https://i.ibb.co/RgtQ0cL/Minion-Step7.png',
 ];
 
-//CONSTANT VARIABLES//
+/*-----------------------------------CONSTANT VARIABLES------------------------------------*/
+
 // Phrases/words the computer can pick from
 const words = [
 	'BOB',
@@ -34,49 +37,58 @@ const words = [
 ];
 
 // Player 1
-
-//STATE VARIABLES//
-// The current phrase/word that has been selected
-//The dashes on the screen
-//Which boxes light up/ grey out
-// The letter box that the user selects
-//
+/*------------------------------------STATE VARIABLES-------------------------------------*/
 // The Score
+let score = 0;
 // The Game Count
+let gameCount = 0;
 // How much of the minion is on the screen
 let chancesLeft = 7;
-//FUNCTIONS//
+
+let winArray = []; //We'll add an element to this array with every correct letter
+let wordLength;
+// The current phrase/word that has been selected
 // Randomly choose a phrase/word
+// let currentWord = words[Math.ceil(Math.random() * 10) - 1];
 let currentWord = words[Math.ceil(Math.random() * 10) - 1];
 console.log(currentWord);
-// Take that phrase/word and display dashes on the screen
+
+/*---------------------------------------FUNCTIONS-----------------------------------------*/
+
+// Randomly choose a phrase/word
+function pickNewWord() {
+	currentWord = words[Math.ceil(Math.random() * 10) - 1];
+	return currentWord;
+}
+
+// Display dashes on the screen
 function dashes(word) {
 	let array = word.split('');
-	console.log(array);
-
+	// console.log(array);
+	wordLength = array.length;
+	// console.log(wordLength);
+	// Create one dash per letter in the array
 	array.forEach((element) => {
 		console.log(element);
 		let div = document.createElement('div');
 		div.classList.add('dashes', element);
 		flexDown.appendChild(div);
 	});
-	// const emptyDashes = document.querySelectorAll('.dashes');
-	// console.log(emptyDashes);
-	return 1;
 }
-// console.log(div.dashes);
-dashes(currentWord);
+
+dashes(currentWord); //Need to call the function --------------------**/
 
 // Compare a selected letter with the correct letters
 function compareLetters(word, letter, clickedSquare) {
 	if (word.includes(letter)) {
-		console.log('That letter is included');
 		//Going to need a loop to check each letter and return it's index
-		console.log(word.indexOf(letter));
+		// console.log(word.indexOf(letter));
 		const emptyDash = document.querySelectorAll(`.${letter}`);
+		console.log(emptyDash);
 		for (let i = 0; i < emptyDash.length; i++) {
-			console.log(emptyDash[i]);
 			emptyDash[i].innerText = letter;
+			winArray.push('1'); //this means when winArray.length = emptyDash.length - the player wins
+			console.log(winArray.length);
 		}
 	} else {
 		clickedSquare.classList.add('wrong');
@@ -90,8 +102,41 @@ function compareLetters(word, letter, clickedSquare) {
 }
 
 // Check Win (needs to be called after each turn)
-//
+function checkWin() {
+	if (winArray.length === wordLength) {
+		console.log('WINNER');
+		gameCount++;
+		score += 10;
+		console.log(gameCount);
+		console.log(score);
+		winner();
+		pickNewWord();
+		console.log(currentWord);
+		dashes(currentWord);
+		return;
+	} else {
+		return;
+	}
+}
 
+function winner() {
+	let div = document.querySelectorAll('.dashes');
+	for (let i = 0; i < wordLength; i++) {
+		flexDown.removeChild(div[i]);
+	}
+	let clickedLetters = document.querySelectorAll('.clicked');
+	console.log(clickedLetters);
+	for (let i = 0; i < clickedLetters.length; i++) {
+		clickedLetters[i].classList.remove('clicked');
+	}
+    let wrongLetters = document.querySelectorAll('.wrong');
+		console.log(clickedLetters);
+		for (let i = 0; i < clickedLetters.length; i++) {
+			clickedLetters[i].classList.remove('clicked');
+		}
+	scoreEl.innerText = `Score: ${score}`;
+	gameCountEl.innerText = `Game Count: ${gameCount}`;
+}
 //EVENT LISTENERS//
 // Click on a letter
 flex.addEventListener('click', (event) => {
@@ -105,6 +150,7 @@ flex.addEventListener('click', (event) => {
 		let clickedSquare = event.target;
 		compareLetters(currentWord, letter, clickedSquare);
 		event.target.classList.add('clicked');
+		checkWin();
 	} else {
 		return 1;
 	}

@@ -41,12 +41,12 @@ h1 {
 	flex-direction: column;
 }
 .flex-up {
-	border: 2px solid white;
+	/* border: 2px solid white; */
 	width: 80vw;
 	height: 50vh;
 }
 .flex-down {
-	border: 2px solid white;
+	/* border: 2px solid white; */
 	width: 80vw;
 	height: 30vh;
 }
@@ -62,29 +62,23 @@ h1 {
 .wrong {
 	background-color: rgb(75, 4, 4);
 }
-footer {
-	display: block;
-	/* margin: 0px auto 0px 10px; */
-}
+
 .minionImage {
-	/* position: center; */
-	margin: 100px 150px;
-	width: 50%;
+	margin: 100px 120px;
+
 	height: 70%;
-	/* position: relative; */
 }
 
 .footer {
 	display: flex;
-	/* justify-content: center; */
 }
 .menuButton {
 	width: 150px;
 	height: 30px;
 	margin: 50px 120px 10px 10px;
 }
-.chancesLeft {
-	margin: 50px;
+.scoreBoard {
+	/* margin: 50px 30px; */
 }
 .flex-down {
 	display: flex;
@@ -99,4 +93,15 @@ footer {
 	margin: 2rem 5px;
 	font-size: 40px;
 	text-align: center;
+}
+.leftMenu {
+	width: 25vw;
+}
+.rightMenu {
+	margin: 30px auto;
+	display: flex;
+	justify-content: space-between;
+	/* align-content: space-between; */
+	width: 75vw;
+
 }
