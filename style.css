@@ -94,6 +94,11 @@ h1 {
 	font-size: 40px;
 	text-align: center;
 }
+._ {
+	background-color:white;
+	border: none;
+	height: .00001px;
+}
 .leftMenu {
 	width: 25vw;
 }
@@ -103,5 +108,4 @@ h1 {
 	justify-content: space-between;
 	/* align-content: space-between; */
 	width: 75vw;
-
 }
