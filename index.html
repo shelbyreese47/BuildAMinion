@@ -11,6 +11,47 @@
 <body>
     <!-- <div class="wholePage"> -->
     <h1>Build a Minion</h1>
+
+    <div id="startGameModal">
+        <div id="start-modal-textbox">
+            <h1>What would you like to do?</h1>
+            <p></p>
+            <p></p>
+            <p></p>
+            <div id="start-modal-footer">
+                <button class="start-modal-buttons" id="how-to-play" href="#">How to Play</button>
+                <button class="start-modal-buttons" id="startGame" href="#">Start Game</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal">
+        <div id="modal-textbox">
+            <h1>How to Play</h1>
+            <ul>
+                <li>A word or sentence will be randomly selected from the word bank</li>
+                <li>Each dash represents a letter, words are separated with spaces</li>
+                <li>Take a guess! Click on the letter you would like to guess</li>
+                <li>If the letter you guess is in the word/sentence, it will appear in the correct spot</li>
+                <li>If the letter you guessed is not in the word/sentence, your minion will gain one attribute</li>
+                <li>You can guess incorrectly 7 times before losing the level</li>
+                <li>For each correct letter guessed, you will get two points</li>
+                <li>For each incorrect letter guessed, you will lose one point</li>
+                <li>Level 01 has 10 words, Level 02 has 5 words/sentences, and Level 03 has 3 words/sentences</li>
+            </ul>
+            <div id="modal-footer">
+                <button class="modal-buttons" id="close" href="#">Close</button>
+            </div>
+        </div>
+    </div>
+    <div id="loseGameModal">
+        <div id="lose-modal-textbox">
+            <h1>LOSER</h1>
+            <div id="lose-modal-footer">
+                 <button class="lose-modal-buttons" id="retry" href="#">Retry</button>
+            </div>
+        </div>
+    </div>
     
       <div class="flex-container">
           <div class= "flex-container2">
@@ -58,10 +99,11 @@
     </div>
     <footer class="footer">
         <div class = "leftMenu">
-            <button class="menuButton">MENU</button>
+            <button class="menuButton">HOW TO PLAY</button>
+
         </div>
         <div class= "rightMenu">
-            <h2 class= "chancesLeft scoreBoard">Chances Left: 7</h2>
+            <h2 class= "chancesLeft scoreBoard">Chances Left: 07</h2>
             <h2 class = "score scoreBoard">Score: 00</h2>
             <h2 class = "level scoreBoard">Level: 01</h2>
         </div>

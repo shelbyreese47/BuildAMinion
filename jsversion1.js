@@ -1,7 +1,17 @@
 /*-----------------------------------DOM ELEMENTS TO GRAB-----------------------------------*/
 // I need to grab:
 // Menu Button
-const menuButton = document.querySelector('menuButton');
+const menuButton = document.querySelector('.menuButton'); //grabbing menu button
+const modal = document.getElementById('modal'); //grabbing modal
+const close = document.getElementById('close'); // grabbing close button
+// Start modal
+const startModal = document.getElementById('startGameModal'); //grabbing start game modal
+const howToPlay = document.getElementById('how-to-play'); //grabbing how to play button
+const startGame = document.getElementById('startGame'); // grabbing start game button
+// Lose Game Modal
+const loseModal = document.getElementById('loseGameModal'); //grabbing lose game modal
+const retryButton = document.getElementById('retry'); // grabbing retry button
+
 // Each letter in the alphabet
 const flex = document.querySelector('.flex-container');
 const minionImage = document.querySelector('.minionImage');
@@ -39,12 +49,27 @@ const words = [
 	'LASER',
 	'SHIP',
 	'SPACE',
-	'COOKIES',
+	'VECTOR',
 	'CHEETO',
 	'MOON',
 ];
-const secondLevelWords = ['ME WANT BANANA', 'SHRINK RAY', ''];
-const thirdLevelWords = ['ITS SO FLUFFY IM GONNA DIE'];
+const secondLevelWords = [
+	'ME WANT BANANA',
+	'SHRINK RAY',
+	'SHRINK THE MOON',
+	'FREEZE RAY',
+	'LIPSTICK TASER',
+	'COOKIE ROBOTS',
+	'SLEEPY KITTENS',
+];
+const thirdLevelWords = [
+	'ITS SO FLUFFY IM GONNA DIE',
+	'WE HAVE NO MONEY',
+	'MINIONS ASSEMBLE',
+	'DUMONT DIAMOND',
+	'EL MACHO',
+	'ANTI VILLIAN LEAGUE',
+];
 
 // Player 1
 /*------------------------------------STATE VARIABLES-------------------------------------*/
@@ -59,14 +84,23 @@ let level = 1;
 let winArray = []; //We'll add an element to this array with every correct letter
 let wordLength;
 // The current phrase/word that has been selected
-// Randomly choose a phrase/word
-// let currentWord = words[Math.ceil(Math.random() * 10) - 1];
-// let currentWord = words[Math.ceil(Math.random() * 10) - 1];
 let currentWord;
-// let currentWord = pickNewWord();
+
 
 /*---------------------------------------FUNCTIONS-----------------------------------------*/
 let unusedWordArray = words;
+function init() {
+	score = 0;
+	scoreEl.innerText = `Score: ${score}`;
+	gameCount = 0;
+	chancesLeft = 7;
+	chancesLeftBoard.innerText = `Chances Left: 0${chancesLeft}`;
+	level = 1;
+	levelEl.innerText = `Level: 0${level}`;
+	winArray = [];
+	wordLength = 0;
+	unusedWordArray = words;
+}
 pickNewWord();
 
 console.log(currentWord);
@@ -84,17 +118,14 @@ function pickNewWord() {
 function dashes(word) {
 	let array = word.split('');
 	let howManySpaces = [];
-	console.log(array);
 	array.forEach((element, index) => {
 		if (element === ' ') {
 			array.splice(index, 1, '_');
 			howManySpaces.push('1'); //Will add one number for each space
 		} else return;
 	});
-	console.log(howManySpaces);
 	dashesLength = array.length;
 	wordLength = array.length - howManySpaces.length;
-	console.log(wordLength);
 	// Create one dash per letter in the array
 	array.forEach((element) => {
 		let div = document.createElement('div');
@@ -126,7 +157,7 @@ function compareLetters(word, letter, clickedSquare) {
 			let image = evilStep[steps];
 			minionImage.setAttribute('src', image);
 		}
-		chancesLeftBoard.innerText = `Chances Left: ${chancesLeft}`;
+		chancesLeftBoard.innerText = `Chances Left: 0${chancesLeft}`;
 	}
 	return chancesLeft;
 }
@@ -153,20 +184,23 @@ function scoreChange() {
 	return score;
 }
 function winGame() {
-	if (gameCount >= 1) {
+	if (gameCount > 5 && gameCount <= 8) {
 		level = 2;
 		levelEl.innerText = `Level: 0${level}`;
-		// alert('SECOND LEVEL'); //--------------------------ADD A SECOND LEVEL
-		unusedWordArray = secondLevelWords;
+		unusedWordArray = secondLevelWords; //---------------------------ADD A SECOND LEVEL
+		return unusedWordArray;
+	} else if (gameCount > 8 && gameCount <= 10) {
+		level = 3;
+		levelEl.innerText = `Level: 0${level}`;
+		unusedWordArray = thirdLevelWords; //---------------------------ADD A SECOND LEVEL
 		return unusedWordArray;
 	}
-	console.log(unusedWordArray);
 	return unusedWordArray;
 }
 
 function checkLose() {
 	if (chancesLeft === 0) {
-		console.log('lose');
+		loseGameModal();
 		resetBoard();
 	}
 }
@@ -187,6 +221,7 @@ function resetBoard() {
 	winArray = [];
 	minionImage.setAttribute('src', '');
 	chancesLeft = 7;
+	chancesLeftBoard.innerText = `Chances Left: 0${chancesLeft}`;
 	scoreEl.innerText = `Score: ${score}`;
 
 	pickNewWord();
@@ -214,4 +249,41 @@ flex.addEventListener('click', (event) => {
 	}
 	return 'complete';
 });
-// Click on menu
+
+/*-----------------------------------------------POP UP FUNCTIONALITY -------------------*/
+// Function to change modal display to 'block'
+const openModal = () => {
+	modal.style.display = 'block';
+};
+// Event handler to close the modal
+const startGameM = () => {
+	startGameModal.style.display = 'none';
+};
+//Add event listener to About the Game button
+howToPlay.addEventListener('click', openModal);
+//Add event listener to Close button
+startGame.addEventListener('click', startGameM);
+
+/*-------------------------------------------------MENU FUNCTIONALITY -------------------*/
+
+// Event handler to close the modal
+const closeModal = () => {
+	modal.style.display = 'none';
+	startGameModal.style.display = 'none';
+};
+//Add event listener to About the Game button
+menuButton.addEventListener('click', openModal);
+//Add event listener to Close button
+close.addEventListener('click', closeModal);
+
+/*-----------------------------------------------LOSE GAME ---------------------------------*/
+const loseGameModal = () => {
+	loseModal.style.display = 'block';
+};
+retryButton.addEventListener('click', () => {
+	// location.reload();
+	loseModal.style.display = 'none';
+	init();
+	modal.style.display = 'none';
+	startGameModal.style.display = 'none';
+});
