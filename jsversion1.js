@@ -11,6 +11,13 @@ const startGame = document.getElementById('startGame'); // grabbing start game b
 // Lose Game Modal
 const loseModal = document.getElementById('loseGameModal'); //grabbing lose game modal
 const retryButton = document.getElementById('retry'); // grabbing retry button
+// Win Game Modal
+const winModal = document.getElementById('winGameModal'); // grabbing win game modal
+const replayButton = document.getElementById('replay'); // grabbing replay button
+// Win Level Modal
+const winLevelModal = document.getElementById('winLevelModal'); // grabbing win game modal
+let levelWin = document.getElementById('levelWin'); // grabbing the h1 in the modal
+let levelWinScore = document.getElementById('levelWinScore'); //grabbing the <p> in the modal
 
 // Each letter in the alphabet
 const flex = document.querySelector('.flex-container');
@@ -21,13 +28,13 @@ const levelEl = document.querySelector('.level');
 const scoreEl = document.querySelector('.score');
 
 const minionStep = [
-	'https://i.ibb.co/PWKSXMD/Minion-Body-1.png',
-	'https://i.ibb.co/G0HrXw6/Minion-Step2.png',
-	'https://i.ibb.co/QcS4YL0/Minion-Step3.png',
-	'https://i.ibb.co/4JvRrsw/Minion-Step4-1.png',
-	'https://i.ibb.co/6NzzdWW/Minion-Step5.png',
-	'https://i.ibb.co/pfTL05g/Minion-Step6.png',
-	'https://i.ibb.co/RgtQ0cL/Minion-Step7.png',
+	'https://i.ibb.co/d29tjBV/tomStep1.png',
+	'https://i.ibb.co/qF84hLq/TomStep2.png',
+	'https://i.ibb.co/Rynvwr1/TomStep3.png',
+	'https://i.ibb.co/BCM0xp4/TomStep4.png',
+	'https://i.ibb.co/jZQSmhr/TomStep5.png',
+	'https://i.ibb.co/p1tcyT7/TomStep6.png',
+	'https://i.ibb.co/12N2RRJ/TomStep7.png',
 ];
 const evilStep = [
 	'https://i.ibb.co/S3TcDvC/evil-Step1.png',
@@ -37,6 +44,15 @@ const evilStep = [
 	'https://i.ibb.co/s5qrYkK/evil-Step5.png',
 	'https://i.ibb.co/Yyb9Hw7/evil-Step6.png',
 	'https://i.ibb.co/F8F9kQv/evil-Step7.png',
+];
+const stuartStep = [
+	'https://i.ibb.co/j8DQ8PZ/Stuart-Step1.png',
+	'https://i.ibb.co/QbL0tkp/Stuart-Step2.png',
+	'https://i.ibb.co/w7xzMgS/Stuart-Step3.png',
+	'https://i.ibb.co/3km0trv/Stuart-Step4.png',
+	'https://i.ibb.co/L1zj5Rw/Stuart-Step5.png',
+	'https://i.ibb.co/swCbGZH/Stuart-Step6.png',
+	'https://i.ibb.co/MD8X8jB/Stuart-Step7.png',
 ];
 /*-----------------------------------CONSTANT VARIABLES------------------------------------*/
 
@@ -63,7 +79,7 @@ const secondLevelWords = [
 	'SLEEPY KITTENS',
 ];
 const thirdLevelWords = [
-	'ITS SO FLUFFY IM GONNA DIE',
+	'ITS SO FLUFFY',
 	'WE HAVE NO MONEY',
 	'MINIONS ASSEMBLE',
 	'DUMONT DIAMOND',
@@ -155,6 +171,9 @@ function compareLetters(word, letter, clickedSquare) {
 		} else if (level === 2) {
 			let image = evilStep[steps];
 			minionImage.setAttribute('src', image);
+		} else if (level === 3) {
+			let image = stuartStep[steps];
+			minionImage.setAttribute('src', image);
 		}
 		chancesLeftBoard.innerText = `Chances Left: 0${chancesLeft}`;
 	}
@@ -183,23 +202,31 @@ function scoreChange() {
 	return score;
 }
 function winGame() {
-	if (gameCount > 5 && gameCount <= 8) {
+	if (gameCount === 2) {
+		levelWin.innerText = `YOU WON LEVEL 1!!`;
+		levelWinScore.innerText = `Your score was ${score}`;
+		winLevelModalFunc();
 		level = 2;
 		levelEl.innerText = `Level: 0${level}`;
 		unusedWordArray = secondLevelWords; //---------------------------ADD A SECOND LEVEL
 		return unusedWordArray;
-	} else if (gameCount > 8 && gameCount <= 10) {
+	} else if (gameCount === 5) {
+		levelWin.innerText = `YOU WON LEVEL 2!!`;
+		levelWinScore.innerText = `Your score was ${score}`;
+		winLevelModalFunc();
 		level = 3;
 		levelEl.innerText = `Level: 0${level}`;
 		unusedWordArray = thirdLevelWords; //---------------------------ADD A SECOND LEVEL
 		return unusedWordArray;
+	} else if (gameCount === 8) {
+		winGameModal();
 	}
 	return unusedWordArray;
 }
 
 function checkLose() {
 	if (chancesLeft === 0) {
-		loseGameModal();
+		setTimeout(loseGameModal, 1000);
 	}
 }
 
@@ -284,3 +311,23 @@ retryButton.addEventListener('click', () => {
 	init();
 	resetBoard();
 });
+
+/*-----------------------------------------------WIN GAME ---------------------------------*/
+const winGameModal = () => {
+	winModal.style.display = 'block';
+};
+replayButton.addEventListener('click', () => {
+	// location.reload();
+	winModal.style.display = 'none';
+	init();
+	resetBoard();
+});
+
+/*-----------------------------------------------WIN LEVEL ---------------------------------*/
+const winLevelModalFunc = () => {
+	winLevelModal.style.display = 'block';
+	setTimeout(closeWinLevelModal, 5000);
+};
+const closeWinLevelModal = () => {
+	winLevelModal.style.display = 'none';
+};

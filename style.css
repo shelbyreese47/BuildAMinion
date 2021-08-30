@@ -1,15 +1,25 @@
 body {
-	background-image: url(https://i.pinimg.com/originals/19/b2/95/19b295386506efc12fa9e051d4fa3742.jpg);
+	/* background-image: url(https://i.pinimg.com/originals/19/b2/95/19b295386506efc12fa9e051d4fa3742.jpg); */
+	background-image: url(https://freight.cargo.site/w/4016/q/75/i/ce887d7a48e9336199e2d54b7adedd04ee7687c5424bf9ef6b591e7b339e0aad/P1003041-2.jpg);
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
 	/* margin: 145px 0 0 0; */
 	/* background: black; */
 	height: 100vh;
+	font-family: 'Rajdhani', sans-serif;
 }
 h1 {
 	text-align: center;
 	margin: 30px auto 0px auto;
+	
+}
+.title{
+	color: rgb(172, 255, 173);
+	font-family: 'ZCOOL KuaiLe', cursive;
+}
+.scoreBoard {
+	color: rgb(113, 239, 163);
 }
 .flex-container {
 	display: flex;
@@ -27,12 +37,13 @@ h1 {
 	width: 50px;
 }
 .alpha {
-	background-color: teal;
+	background-color: rgb(80, 203, 147, 0.8);
 	border: 1px solid black;
 	height: 5.5vh;
 	text-align: center;
 	font-size: 24px;
 	margin: 2px;
+	font-family: 'Rajdhani', sans-serif;
 }
 .flex-container2 {
 	/* background-color: purple; */
@@ -52,7 +63,7 @@ h1 {
 }
 
 .clicked {
-	background-color: purple;
+	background-color: rgb(84, 67, 107, 0.8);
 	border: 1px solid black;
 	height: 5.5vh;
 	text-align: center;
@@ -60,7 +71,7 @@ h1 {
 	margin: 2px;
 }
 .wrong {
-	background-color: rgb(75, 4, 4);
+	background-color: rgb(47, 93, 98, 0.8);
 }
 
 .minionImage {
@@ -90,11 +101,12 @@ h1 {
 	/* align-content: center; */
 	height: 50px;
 	width: 50px;
-	background-color: royalblue;
+	background-color: rgb(84, 67, 107, 0.8);
 	border: 2px solid black;
 	margin: 2rem 5px;
 	font-size: 40px;
 	text-align: center;
+	font-family: 'Rajdhani', sans-serif;
 }
 ._ {
 	background-color: white;
@@ -114,7 +126,11 @@ h1 {
 	width: 75vw;
 }
 /* -------------------------------- HOW TO PLAY MODAL ------------------------------------ */
-#modal {
+/* #modal,
+#loseGameModal,
+#winGameModal,
+#winLevelModal  */
+.basicModal {
 	background-color: rgba(0, 0, 0, 0.4);
 	position: fixed;
 	top: 0;
@@ -128,20 +144,36 @@ h1 {
 	display: none;
 	/* Set this to `none` so that the modal does not show initially on page load. */
 }
-#modal-textbox {
-	background-color: white;
-	height: 350px;
+/* #modal-textbox,
+#lose-modal-textbox,
+#win-modal-textbox,
+#win-level-textbox  */
+.basicModalTextbox{
+	background-color: rgb(84, 67, 107, 0.97);
+	color: white;
+	height: 75px;
 	width: 550px;
 	border-radius: 2px;
 	margin: 150px auto;
-	/*This will set the margins for the top and the bottom to 150px (or larger). The right and left will automatically set themselves (and keep the box centered horizontally)*/
 	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
-	/*This will give the box some depth.*/
 	padding: 2%;
-	line-height: 120%;
-	font-family: Arial, Helvetica, sans-serif;
+	line-height: 130%;
+	
 }
-#modal-footer {
+#modal-textbox {
+	height: 350px;
+}
+#levelWinScore{
+	font-size: 24px;
+	text-align: center;
+}
+#win-level-textbox{
+	height: 150px;
+}
+#modal-footer,
+#lose-modal-footer,
+#win-modal-footer,
+#win-level-footer {
 	text-align: right;
 }
 /* -------------------------------- START GAME MODAL ------------------------------------ */
@@ -157,55 +189,28 @@ h1 {
 	overflow: auto;
 	/*If overflow is clipped, a scroll-bar should be added to see the rest of the content*/
 	display: block;
-	/* Set this to `none` so that the modal does not show initially on page load. */
 }
 #start-modal-textbox {
-	background-color: white;
+	background-color: rgba(84, 67, 107, 0.9);
+	color: white;
 	height: 100px;
 	width: 550px;
 	border-radius: 2px;
 	margin: 150px auto;
-	/*This will set the margins for the top and the bottom to 150px (or larger). The right and left will automatically set themselves (and keep the box centered horizontally)*/
 	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
 	/*This will give the box some depth.*/
 	padding: 2%;
 	line-height: 120%;
-	font-family: Arial, Helvetica, sans-serif;
+	
 }
 #start-modal-footer {
 	text-align: center;
 	margin: 0 50px;
+	padding: 0 50px;
 }
-/* -------------------------------- LOSE GAME MODAL ------------------------------------ */
-#loseGameModal {
-	background-color: rgba(0, 0, 0, 0.4);
-	position: fixed;
-	top: 0;
-	left: 0;
-	height: 100%;
-	width: 100%;
-	z-index: 1;
-	/*This puts our modal in front of the body (which has a default z-index setting of `0`*/
-	overflow: auto;
-	/*If overflow is clipped, a scroll-bar should be added to see the rest of the content*/
-	display: none;
-	/* Set this to `none` so that the modal does not show initially on page load. */
-}
+
 #lose-modal-textbox {
-	background-color: white;
-	height: 350px;
-	width: 550px;
-	border-radius: 2px;
-	margin: 150px auto;
-	/*This will set the margins for the top and the bottom to 150px (or larger). The right and left will automatically set themselves (and keep the box centered horizontally)*/
-	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
-	/*This will give the box some depth.*/
-	padding: 2%;
-	line-height: 120%;
-	font-family: Arial, Helvetica, sans-serif;
-}
-#lose-modal-footer {
-	text-align: right;
+	height: 75px;
 }
 
 @media (max-width: 400px) {

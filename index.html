@@ -5,28 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Build a Minion</title>
+    <link rel="icon" href="https://i.ibb.co/WGzvGPR/Screen-Shot-2021-08-30-at-1-00-00-PM.png" type="image/icon type">
     <link rel="stylesheet" href="./style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300&display=swap');
+    </style>
     <!-- <link rel="stylesheet" href="./reset.css"> -->
 </head>
 <body>
     <!-- <div class="wholePage"> -->
-    <h1>Build a Minion</h1>
+    <h1 class="title">Build a Minion</h1>
 
     <div id="startGameModal">
         <div id="start-modal-textbox">
-            <h1>What would you like to do?</h1>
-            <p></p>
-            <p></p>
-            <p></p>
+            <h1>What would you like to do?</h1> <br/>
             <div id="start-modal-footer">
-                <button class="start-modal-buttons" id="how-to-play" href="#">How to Play</button>
-                <button class="start-modal-buttons" id="startGame" href="#">Start Game</button>
+                <button class="start-modal-buttons" id="how-to-play">How to Play</button>
+                <button class="start-modal-buttons" id="startGame">Start Game</button>
             </div>
         </div>
     </div>
 
-    <div id="modal">
-        <div id="modal-textbox">
+    <div id="modal" class="basicModal">
+        <div id="modal-textbox" class="basicModalTextbox">
             <h1>How to Play</h1>
             <ul>
                 <li>A word or sentence will be randomly selected from the word bank</li>
@@ -40,16 +42,30 @@
                 <li>Level 01 has 10 words, Level 02 has 5 words/sentences, and Level 03 has 3 words/sentences</li>
             </ul>
             <div id="modal-footer">
-                <button class="modal-buttons" id="close" href="#">Close</button>
+                <button class="modal-buttons" id="close">Close</button>
             </div>
         </div>
     </div>
-    <div id="loseGameModal">
-        <div id="lose-modal-textbox">
+    <div id="loseGameModal" class="basicModal">
+        <div id="lose-modal-textbox" class="basicModalTextbox">
             <h1>LOSER</h1>
             <div id="lose-modal-footer">
-                 <button class="lose-modal-buttons" id="retry" href="#">Retry</button>
+                 <button class="lose-modal-buttons" id="retry">Retry Game</button>
             </div>
+        </div>
+    </div>
+    <div id="winGameModal" class="basicModal">
+        <div id="win-modal-textbox" class="basicModalTextbox">
+            <h1>YOU WIN!!</h1>
+            <div id="win-modal-footer">
+                <button class="win-modal-buttons" id="replay">Replay Game</button>
+            </div>
+        </div>
+    </div>
+    <div id="winLevelModal" class="basicModal">
+        <div id="win-level-textbox" class="basicModalTextbox">
+            <h1 id="levelWin">YOU WON LEVEL</h1>
+            <p id="levelWinScore">Your score was</p>
         </div>
     </div>
     
