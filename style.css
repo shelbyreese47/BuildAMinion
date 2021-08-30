@@ -83,6 +83,8 @@ h1 {
 .flex-down {
 	display: flex;
 	justify-content: center;
+	flex-wrap: wrap;
+	align-content: space-around;
 }
 .dashes {
 	/* align-content: center; */
@@ -98,6 +100,8 @@ h1 {
 	background-color: white;
 	border: none;
 	height: 0.00001px;
+	width: 100vw;
+	margin: 0px 5px;
 }
 .leftMenu {
 	width: 25vw;
@@ -202,4 +206,69 @@ h1 {
 }
 #lose-modal-footer {
 	text-align: right;
+}
+
+@media (max-width: 400px) {
+	body {
+		margin: -10px 0px;
+	}
+	#lose-modal-textbox,
+	#start-modal-textbox {
+		background-color: white;
+		height: 30vh;
+		width: 80vw;
+		border-radius: 2px;
+		margin: 150px auto;
+		line-height: 1.15;
+	}
+	#modal-textbox {
+		background-color: white;
+		height: 70vh;
+		width: 80vw;
+		border-radius: 2px;
+		margin: 150px auto;
+		line-height: 1.15;
+	}
+	.footer {
+		display: flex;
+		flex-direction: column-reverse;
+	}
+	.menuButton {
+		width: 150px;
+		height: 30px;
+		margin: -50px 100px;
+	}
+	.scoreBoard {
+		margin: 0px 0px;
+		/* justify-content: space-between; */
+		/* width: 100vw; */
+		font-size: small;
+	}
+	.flex-down {
+		display: flex;
+		flex-wrap: wrap;
+		align-content: space-around;
+	}
+	.dashes {
+		height: 24px;
+		width: 24px;
+		background-color: royalblue;
+		border: 2px solid black;
+		font-size: 24px;
+		text-align: center;
+	}
+	._ {
+		width: 100vw;
+		background-color: white;
+		border: none;
+		height: 0.00001px;
+		margin: 0px;
+	}
+	.minionImage {
+		display: inline;
+		/* margin: 0px 20px 0px 20px; */
+		margin-top: 10vh;
+		margin-right: 75vw;
+		height: 45%;
+	}
 }

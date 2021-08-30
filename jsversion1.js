@@ -86,7 +86,6 @@ let wordLength;
 // The current phrase/word that has been selected
 let currentWord;
 
-
 /*---------------------------------------FUNCTIONS-----------------------------------------*/
 let unusedWordArray = words;
 function init() {
@@ -201,7 +200,6 @@ function winGame() {
 function checkLose() {
 	if (chancesLeft === 0) {
 		loseGameModal();
-		resetBoard();
 	}
 }
 
@@ -284,6 +282,5 @@ retryButton.addEventListener('click', () => {
 	// location.reload();
 	loseModal.style.display = 'none';
 	init();
-	modal.style.display = 'none';
-	startGameModal.style.display = 'none';
+	resetBoard();
 });
