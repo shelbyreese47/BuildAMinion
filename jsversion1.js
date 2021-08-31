@@ -65,13 +65,13 @@ const minionStep = [
 	'https://i.ibb.co/12N2RRJ/TomStep7.png',
 ];
 const evilStep = [
-	'https://i.ibb.co/S3TcDvC/evil-Step1.png',
-	'https://i.ibb.co/zPCF25v/evil-Step2.png',
-	'https://i.ibb.co/NmBNybW/evil-Step3.png',
-	'https://i.ibb.co/7W9Bx6C/evil-Step4.png',
-	'https://i.ibb.co/s5qrYkK/evil-Step5.png',
-	'https://i.ibb.co/Yyb9Hw7/evil-Step6.png',
-	'https://i.ibb.co/F8F9kQv/evil-Step7.png',
+	'https://i.ibb.co/Lny58PB/evil-Step1-1.png',
+	'https://i.ibb.co/9ws1SyB/evil2.png',
+	'https://i.ibb.co/yPpb7gM/evil3.png',
+	'https://i.ibb.co/nL0fNBm/evil4.png',
+	'https://i.ibb.co/fDX4yrg/evil5.png',
+	'https://i.ibb.co/LJXDfYp/evil6.png',
+	'https://i.ibb.co/z8NPdNH/evil7.png',
 ];
 const stuartStep = [
 	'https://i.ibb.co/j8DQ8PZ/Stuart-Step1.png',
