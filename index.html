@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stop Balthazar</title>
-    <link rel="icon" href="https://i.ibb.co/YQV4nkG/icon.png" type="image/icon type">
+    <link rel="icon" href="https://i.ibb.co/YQV4nkG/icon.png">
     <link rel="stylesheet" href="./style.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
     </style>
- 
+
 </head>
+
 <body>
-     <h1 class="title">Stop Balthazar</h1>
-     <div id="startGameModal">
-        <div id="start-modal-textbox" >
-            <h1>Villian Balthazar Bratt has taken over the lab!</h1> 
+    <h1 class="title">Stop Balthazar</h1>
+    <div id="startGameModal">
+        <div id="start-modal-textbox">
+            <h1>Villian Balthazar Bratt has taken over the lab!</h1>
             <h3> Stop him from making more minions!</h3>
             <img id="villian" src="https://i.ibb.co/LQPVkkQ/Villian-1.png" alt="villian balthazar bratt">
             <div id="start-modal-footer">
@@ -33,26 +35,37 @@
             <h1>How to Play</h1>
             <ul>
                 <li>A word or sentence will be randomly selected from the word bank</li>
-                <li>Each dash represents a letter, words are separated with spaces</li>
-                <li>Take a guess! Click on the letter you would like to guess</li>
-                <li>If the letter you guess is in the word/sentence, it will appear in the correct spot</li>
-                <li>If the letter you guessed is not in the word/sentence, your minion will gain one attribute</li>
-                <li>You can guess incorrectly 7 times before losing the level</li>
-                <li>For each correct letter guessed, you will get two points</li>
-                <li>For each incorrect letter guessed, you will lose one point</li>
-                <li>Level 01 has 10 words, Level 02 has 5 words/sentences, and Level 03 has 3 words/sentences</li>
+                <li>Each dash represents a letter- words are separated with spaces</li>
+                <li>Take a guess! Click on the letter you would like to guess
+                    <ul>
+                        <li>If the letter you guess is in the word/sentence, it will appear in the correct spot</li>
+                        <li>If you guess wrong- one part of your minion will be built!</li>
+                        <li>You can guess incorrectly 7 times before losing the level</li>
+                    </ul>
+                </li>
+
+                <li>Scoring:
+                    <ul>
+                        <li> correct letter: +2 points</li>
+                        <li> incorrect letter: -1 point</li>
+                    </ul>
+                </li>
+
+
             </ul>
             <div id="modal-footer">
-                <button class="modal-buttons" id="close">Close</button>
+                <button class="modal-buttons" id="close">Start Game</button>
             </div>
         </div>
     </div>
     <div id="loseGameModal" class="basicModal">
         <div id="lose-modal-textbox" class="basicModalTextbox">
             <h1>Balthazar Bratt was too quick for you this time! It's not too late though- want to try again?!</h1>
-            <img id="villian2" src="https://i.ibb.co/SX7XpYx/balthazar-bratt-despicable-me-3-transparent-115468050032jtaqglja6.png" alt="Balthazar Bratt blowing a bubble">
+            <img id="villian2"
+                src="https://i.ibb.co/SX7XpYx/balthazar-bratt-despicable-me-3-transparent-115468050032jtaqglja6.png"
+                alt="Balthazar Bratt blowing a bubble">
             <div id="lose-modal-footer">
-                 <button class="lose-modal-buttons" id="retry">Retry Game</button>
+                <button class="lose-modal-buttons" id="retry">Retry Game</button>
             </div>
         </div>
     </div>
@@ -71,48 +84,48 @@
             <p id="levelWinScore">Your score was</p>
         </div>
     </div>
-    
-      <div class="flex-container">
-          <div class= "flex-container2">
-              
-              <div class="flex-up"> 
+
+    <div class="flex-container">
+        <div class="flex-container2">
+
+            <div class="flex-up">
                 <div id="progress">
                     <div class="levelOne">
                         <h4>Level 01:</h4>
-                        
-                            <div class="levelOneDiv levelDiv" id='1_1'></div>
-                            <div class="levelOneDiv levelDiv" id='1_2'></div>
-                            <div class="levelOneDiv levelDiv" id='1_3'></div>
-                            <div class="levelOneDiv levelDiv" id='1_4'></div>
-                            <div class="levelOneDiv levelDiv" id='1_5'></div>
-                        
+
+                        <div class="levelOneDiv levelDiv" id='1_1'></div>
+                        <div class="levelOneDiv levelDiv" id='1_2'></div>
+                        <div class="levelOneDiv levelDiv" id='1_3'></div>
+                        <div class="levelOneDiv levelDiv" id='1_4'></div>
+                        <div class="levelOneDiv levelDiv" id='1_5'></div>
+
                     </div>
                     <div class="levelTwo">
                         <h4>Level 02:</h4>
-                        
-                            <div class="levelTwoDiv levelDiv" id='2_1'></div>
-                            <div class="levelTwoDiv levelDiv" id='2_2'></div>
-                            <div class="levelTwoDiv levelDiv" id='2_3'></div>
-                            <div class="levelTwoDiv levelDiv" id='2_4'></div>
-                       
+
+                        <div class="levelTwoDiv levelDiv" id='2_1'></div>
+                        <div class="levelTwoDiv levelDiv" id='2_2'></div>
+                        <div class="levelTwoDiv levelDiv" id='2_3'></div>
+                        <div class="levelTwoDiv levelDiv" id='2_4'></div>
+
                     </div>
                     <div class="levelThree">
                         <h4>Level 03:</h4>
-                        
-                            <div class="levelThreeDiv levelDiv" id='3_1'></div>
-                            <div class="levelThreeDiv levelDiv" id='3_2'></div>
-                            <div class="levelThreeDiv levelDiv" id='3_3'></div>
-                        
-                    </div>               
+
+                        <div class="levelThreeDiv levelDiv" id='3_1'></div>
+                        <div class="levelThreeDiv levelDiv" id='3_2'></div>
+                        <div class="levelThreeDiv levelDiv" id='3_3'></div>
+
+                    </div>
                 </div>
-                <img src=""  class = "minionImage"/>
-              </div>
+                <img src="" class="minionImage" />
+            </div>
 
-              <div class="flex-down"> 
-
-              </div>
+            <div class="flex-down">
 
             </div>
+
+        </div>
         <div class="flex-left">
             <div class="alpha">A</div>
             <div class="alpha">B</div>
@@ -145,21 +158,18 @@
         </div>
     </div>
     <footer class="footer">
-        <div class = "leftMenu">
+        <div class="leftMenu">
             <button class="menuButton">HOW TO PLAY</button>
 
         </div>
-        <div class= "rightMenu">
-            <h2 class= "chancesLeft scoreBoard">Chances Left: 07</h2>
-            <h2 class = "score scoreBoard">Score: 00</h2>
-            <h2 class = "level scoreBoard">Level: 01</h2>
+        <div class="rightMenu">
+            <h2 class="chancesLeft scoreBoard">Chances Left: 07</h2>
+            <h2 class="score scoreBoard">Score: 00</h2>
+            <h2 class="level scoreBoard">Level: 01</h2>
         </div>
     </footer>
-    
-
-
-
 
     <script src="./jsversion1.js"></script>
 </body>
+
 </html>

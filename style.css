@@ -15,19 +15,25 @@ h3 {
 	text-align: center;
 	margin: 0px auto 20px auto;
 }
-#villian, #villian2 {
+#villian,
+#villian2 {
 	height: 50%;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
 }
 .title {
-	color:rgb(121, 1, 219);
+	color: rgb(121, 1, 219);
 	font-family: 'ZCOOL KuaiLe', cursive;
-
 }
 h4 {
 	font-size: 14px;
+	margin: 0px 6px 0px 0px;
+	color: rgb(113, 239, 163);
+}
+.levelDiv {
+	height: 14px;
+	width: 14px;
 	margin: 0px 2px 0px 0px;
 	color: rgb(113, 239, 163);
 }
@@ -35,7 +41,7 @@ h4 {
 	height: 13px;
 	width: 13px;
 	border: 1px solid rgb(113, 239, 163);
-	margin: 0;
+	margin: 0px;
 }
 
 .levelOne,
@@ -98,9 +104,7 @@ h4 {
 .clicked {
 	background-color: rgb(84, 67, 107, 0.8);
 	border: 1px solid black;
-	/* height: 5.5vh; */
 	text-align: center;
-	/* font-size: 24px; */
 	margin: 2px;
 }
 .wrong {
@@ -140,7 +144,7 @@ h4 {
 	font-size: 40px;
 	text-align: center;
 	font-family: 'Rajdhani', sans-serif;
-	color:white;
+	color: white;
 }
 ._ {
 	background-color: white;
@@ -213,7 +217,8 @@ h4 {
 	overflow: auto;
 	display: block;
 }
-#start-modal-textbox, #lose-modal-textbox {
+#start-modal-textbox,
+#lose-modal-textbox {
 	background-color: rgba(84, 67, 107, 0.9);
 	color: white;
 	height: 400px;
@@ -295,11 +300,6 @@ h4 {
 		margin: 0px;
 	}
 	.minionImage {
-		/* display: inline; */
-		/* margin: 100px 20px 0px 200px; */
-		/* margin-top: 10vh; */
-		/* margin-right: 50px; */
 		height: 45%;
 	}
-	
 }
