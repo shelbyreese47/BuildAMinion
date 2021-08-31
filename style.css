@@ -135,7 +135,6 @@ h4 {
 	align-content: space-around;
 }
 .dashes {
-	/* align-content: center; */
 	height: 50px;
 	width: 50px;
 	background-color: rgb(84, 67, 107, 0.9);
@@ -250,8 +249,13 @@ h4 {
 		width: 80vw;
 		line-height: 1.15;
 	}
+
 	.flex-right {
-		margin-right: 10px;
+		margin-right: 20px;
+		width: 25px;
+	}
+	.flex-left {
+		width: 25px;
 	}
 	.footer {
 		display: flex;
@@ -287,12 +291,14 @@ h4 {
 		display: flex;
 		flex-wrap: wrap;
 		align-content: space-around;
-		margin-left: 100px;
+		margin-left: 80px;
+		width: 100vw;
 	}
-	.dashes {
+	.dashes, .alpha {
 		height: 24px;
 		width: 24px;
 		font-size: 22px;
+		padding: 0px;
 	}
 	._ {
 		width: 100vw;
