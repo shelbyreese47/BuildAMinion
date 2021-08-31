@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stop Balthazar</title>
-    <link rel="icon" href="https://i.ibb.co/YQV4nkG/icon.png" type="image/icon type">
+    <link rel="icon" href="https://i.ibb.co/YQV4nkG/icon.png">
     <link rel="stylesheet" href="./style.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
     </style>
- 
+    
 </head>
 <body>
      <h1 class="title">Stop Balthazar</h1>
@@ -33,17 +33,26 @@
             <h1>How to Play</h1>
             <ul>
                 <li>A word or sentence will be randomly selected from the word bank</li>
-                <li>Each dash represents a letter, words are separated with spaces</li>
-                <li>Take a guess! Click on the letter you would like to guess</li>
-                <li>If the letter you guess is in the word/sentence, it will appear in the correct spot</li>
-                <li>If the letter you guessed is not in the word/sentence, your minion will gain one attribute</li>
-                <li>You can guess incorrectly 7 times before losing the level</li>
-                <li>For each correct letter guessed, you will get two points</li>
-                <li>For each incorrect letter guessed, you will lose one point</li>
-                <li>Level 01 has 10 words, Level 02 has 5 words/sentences, and Level 03 has 3 words/sentences</li>
+                <li>Each dash represents a letter- words are separated with spaces</li>
+                <li>Take a guess! Click on the letter you would like to guess
+                    <ul>
+                        <li>If the letter you guess is in the word/sentence, it will appear in the correct spot</li>
+                        <li>If you guess wrong- one part of your minion will be built!</li>
+                        <li>You can guess incorrectly 7 times before losing the level</li> 
+                    </ul>
+                </li> 
+                
+                <li>Scoring:
+                    <ul>
+                        <li> correct letter: +2 points</li>
+                        <li> incorrect letter: -1 point</li>
+                    </ul>
+                </li>
+               
+             
             </ul>
             <div id="modal-footer">
-                <button class="modal-buttons" id="close">Close</button>
+                <button class="modal-buttons" id="close">Start Game</button>
             </div>
         </div>
     </div>
@@ -153,10 +162,6 @@
         </div>
     </footer>
     
-
-
-
-
-    <script src="./jsversion1.js"></script>
+      <script src="./jsversion1.js"></script>
 </body>
 </html>
