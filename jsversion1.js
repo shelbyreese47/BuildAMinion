@@ -166,7 +166,7 @@ function pickNewWord() {
 	return currentWord;
 }
 pickNewWord(); //Need to call out the function to pick a new word
-console.log(currentWord); //NEED to keep this in here to test out levels
+// console.log(currentWord); //NEED to keep this in here to test out levels -- for cheating! 
 
 // Display dashes on the screen//
 function dashes(word) {
@@ -299,7 +299,7 @@ function resetBoard() {
 	scoreEl.innerText = `Score: ${score}`;
 
 	pickNewWord(); //pick a new word
-	console.log(currentWord); //I like to cheat a lot while trying out the game
+	// console.log(currentWord); //I like to cheat a lot while trying out the game- I'll leave this in but comment it out (you might want to cheat too!)
 	dashes(currentWord); //put new dashes on the screen
 }
 
