@@ -1,5 +1,4 @@
 body {
-	/* background-image: url(https://i.pinimg.com/originals/19/b2/95/19b295386506efc12fa9e051d4fa3742.jpg); */
 	background-image: url(https://freight.cargo.site/w/4016/q/75/i/ce887d7a48e9336199e2d54b7adedd04ee7687c5424bf9ef6b591e7b339e0aad/P1003041-2.jpg);
 	background-position: center;
 	background-size: cover;
@@ -16,16 +15,16 @@ h3 {
 	text-align: center;
 	margin: 0px auto 20px auto;
 }
-#villian, #villian2 {
+#villian,
+#villian2 {
 	height: 50%;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
 }
 .title {
-	color:rgb(121, 1, 219);
+	color: rgb(121, 1, 219);
 	font-family: 'ZCOOL KuaiLe', cursive;
-
 }
 h4 {
 	font-size: 14px;
@@ -35,6 +34,13 @@ h4 {
 .levelDiv {
 	height: 14px;
 	width: 14px;
+	margin: 0px 2px 0px 0px;
+	color: rgb(113, 239, 163);
+}
+.levelDiv {
+	height: 13px;
+	width: 13px;
+
 	border: 1px solid rgb(113, 239, 163);
 	margin: 0px;
 }
@@ -43,6 +49,7 @@ h4 {
 .levelTwo,
 .levelThree {
 	display: flex;
+	flex-direction: row;
 }
 
 .scoreBoard {
@@ -83,12 +90,11 @@ h4 {
 	padding: 10px;
 }
 .flex-container2 {
-	width: 80vw;
+	width: 100vw;
 	display: flex;
 	flex-direction: column;
 }
 .flex-up {
-	width: 80vw;
 	height: 50vh;
 }
 .flex-down {
@@ -99,9 +105,7 @@ h4 {
 .clicked {
 	background-color: rgb(84, 67, 107, 0.8);
 	border: 1px solid black;
-	/* height: 5.5vh; */
 	text-align: center;
-	/* font-size: 24px; */
 	margin: 2px;
 }
 .wrong {
@@ -109,7 +113,6 @@ h4 {
 }
 
 .minionImage {
-	/* margin: 100px 120px; */
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
@@ -142,7 +145,7 @@ h4 {
 	font-size: 40px;
 	text-align: center;
 	font-family: 'Rajdhani', sans-serif;
-	color:white;
+	color: white;
 }
 ._ {
 	background-color: white;
@@ -159,7 +162,6 @@ h4 {
 	margin: 30px auto;
 	display: flex;
 	justify-content: space-between;
-	/* align-content: space-between; */
 	width: 75vw;
 }
 /* -------------------------------- MODALS ------------------------------------ */
@@ -216,7 +218,8 @@ h4 {
 	overflow: auto;
 	display: block;
 }
-#start-modal-textbox, #lose-modal-textbox {
+#start-modal-textbox,
+#lose-modal-textbox {
 	background-color: rgba(84, 67, 107, 0.9);
 	color: white;
 	height: 400px;
@@ -255,10 +258,14 @@ h4 {
 		flex-direction: column-reverse;
 	}
 	.basicModalTextbox {
-		height: 150px;
-		width: 80vw;
+		height: 200px;
+		width: 350px;
 		padding: 2%;
 		line-height: 130%;
+	}
+	#lose-modal-textbox {
+		width: 80vw;
+		height: 65vh;
 	}
 	.menuButton {
 		width: 150px;
@@ -273,15 +280,19 @@ h4 {
 		margin-left: 15px;
 		margin-right: 15px;
 	}
+	.flex-up {
+		margin-left: 120px;
+	}
 	.flex-down {
 		display: flex;
 		flex-wrap: wrap;
 		align-content: space-around;
+		margin-left: 100px;
 	}
 	.dashes {
 		height: 24px;
 		width: 24px;
-		font-size: 24px;
+		font-size: 22px;
 	}
 	._ {
 		width: 100vw;
@@ -290,13 +301,6 @@ h4 {
 		margin: 0px;
 	}
 	.minionImage {
-		/* display: inline; */
-		margin: 100px 20px 0px 100px;
-		/* margin-top: 10vh; */
-		/* margin-right: 50px; */
 		height: 45%;
 	}
-}
-
-@media (min-width: 700px) {
 }
