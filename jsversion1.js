@@ -18,6 +18,33 @@ const replayButton = document.getElementById('replay'); // grabbing replay butto
 const winLevelModal = document.getElementById('winLevelModal'); // grabbing win game modal
 let levelWin = document.getElementById('levelWin'); // grabbing the h1 in the modal
 let levelWinScore = document.getElementById('levelWinScore'); //grabbing the <p> in the modal
+//Progress bars
+const oneOne = document.getElementById('1_1');
+const oneTwo = document.getElementById('1_2');
+const oneThree = document.getElementById('1_3');
+const oneFour = document.getElementById('1_4');
+const oneFive = document.getElementById('1_5');
+const twoOne = document.getElementById('2_1');
+const twoTwo = document.getElementById('2_2');
+const twoThree = document.getElementById('2_3');
+const twoFour = document.getElementById('2_4');
+const threeOne = document.getElementById('3_1');
+const threeTwo = document.getElementById('3_2');
+const threeThree = document.getElementById('3_3');
+const progress = [
+	oneOne,
+	oneTwo,
+	oneThree,
+	oneFour,
+	oneFive,
+	twoOne,
+	twoTwo,
+	twoThree,
+	twoFour,
+	threeOne,
+	threeTwo,
+	threeThree
+];
 
 // Each letter in the alphabet
 const flex = document.querySelector('.flex-container');
@@ -62,12 +89,15 @@ const words = [
 	'KEVIN',
 	'GRU',
 	'BANANA',
+	'LUCY',
 	'LASER',
 	'SHIP',
 	'SPACE',
 	'VECTOR',
-	'CHEETO',
+	'PYRAMID',
 	'MOON',
+	'AGNES',
+
 ];
 const secondLevelWords = [
 	'ME WANT BANANA',
@@ -76,11 +106,13 @@ const secondLevelWords = [
 	'FREEZE RAY',
 	'LIPSTICK TASER',
 	'COOKIE ROBOTS',
-	'SLEEPY KITTENS',
+	'PIRANHA GUN',
+	'SQUID LAUNCHER',
+	'SLEEPY KITTENS'
 ];
 const thirdLevelWords = [
 	'ITS SO FLUFFY',
-	'WE HAVE NO MONEY',
+	'STATUE OF LIBERTY',
 	'MINIONS ASSEMBLE',
 	'DUMONT DIAMOND',
 	'EL MACHO',
@@ -93,7 +125,7 @@ const thirdLevelWords = [
 let score = 0;
 // The Game Count
 let gameCount = 0;
-// How much of the minion is on the screen
+// How many guesses left until the minion is built
 let chancesLeft = 7;
 let level = 1;
 
