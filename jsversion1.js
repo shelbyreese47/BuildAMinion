@@ -18,7 +18,7 @@ const replayButton = document.getElementById('replay'); // grabbing replay butto
 const winLevelModal = document.getElementById('winLevelModal'); // grabbing win game modal
 let levelWin = document.getElementById('levelWin'); // grabbing the h1 in the modal
 let levelWinScore = document.getElementById('levelWinScore'); //grabbing the <p> in the modal
-//Progress bars
+//Progress bars- I want to have a box filled in for each word they get right
 const oneOne = document.getElementById('1_1');
 const oneTwo = document.getElementById('1_2');
 const oneThree = document.getElementById('1_3');
@@ -31,6 +31,7 @@ const twoFour = document.getElementById('2_4');
 const threeOne = document.getElementById('3_1');
 const threeTwo = document.getElementById('3_2');
 const threeThree = document.getElementById('3_3');
+//Making an array of the variables so I can call them out easier
 const progress = [
 	oneOne,
 	oneTwo,
@@ -43,7 +44,7 @@ const progress = [
 	twoFour,
 	threeOne,
 	threeTwo,
-	threeThree
+	threeThree,
 ];
 
 // Each letter in the alphabet
@@ -97,7 +98,6 @@ const words = [
 	'PYRAMID',
 	'MOON',
 	'AGNES',
-
 ];
 const secondLevelWords = [
 	'ME WANT BANANA',
@@ -108,7 +108,7 @@ const secondLevelWords = [
 	'COOKIE ROBOTS',
 	'PIRANHA GUN',
 	'SQUID LAUNCHER',
-	'SLEEPY KITTENS'
+	'SLEEPY KITTENS',
 ];
 const thirdLevelWords = [
 	'ITS SO FLUFFY',
@@ -147,6 +147,9 @@ function init() {
 	winArray = [];
 	wordLength = 0;
 	unusedWordArray = words;
+	for (let i = 0; i < 12; i++) {
+		progress[i].style.removeProperty("background-color");
+	}
 }
 pickNewWord();
 
@@ -216,6 +219,8 @@ function compareLetters(word, letter, clickedSquare) {
 function checkWin() {
 	if (winArray.length === wordLength) {
 		gameCount++;
+		console.log(gameCount);
+		progress[gameCount - 1].style.backgroundColor = 'teal';
 		scoreChange();
 		setTimeout(winGame, 1000);
 		setTimeout(resetBoard, 1000); //Wanted a delay after the last letter is selected
@@ -234,7 +239,7 @@ function scoreChange() {
 	return score;
 }
 function winGame() {
-	if (gameCount === 2) {
+	if (gameCount === 5) {
 		levelWin.innerText = `YOU WON LEVEL 1!!`;
 		levelWinScore.innerText = `Your score was ${score}`;
 		winLevelModalFunc();
@@ -242,7 +247,7 @@ function winGame() {
 		levelEl.innerText = `Level: 0${level}`;
 		unusedWordArray = secondLevelWords; //---------------------------ADD A SECOND LEVEL
 		return unusedWordArray;
-	} else if (gameCount === 5) {
+	} else if (gameCount === 9) {
 		levelWin.innerText = `YOU WON LEVEL 2!!`;
 		levelWinScore.innerText = `Your score was ${score}`;
 		winLevelModalFunc();
@@ -250,7 +255,7 @@ function winGame() {
 		levelEl.innerText = `Level: 0${level}`;
 		unusedWordArray = thirdLevelWords; //---------------------------ADD A SECOND LEVEL
 		return unusedWordArray;
-	} else if (gameCount === 8) {
+	} else if (gameCount === 12) {
 		winGameModal();
 	}
 	return unusedWordArray;
@@ -275,6 +280,7 @@ function resetBoard() {
 	for (let i = 0; i < wrongLetters.length; i++) {
 		wrongLetters[i].classList.remove('wrong');
 	}
+
 	winArray = [];
 	minionImage.setAttribute('src', '');
 	chancesLeft = 7;
