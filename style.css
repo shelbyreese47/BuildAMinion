@@ -56,7 +56,7 @@ h4 {
 	color: rgb(113, 239, 163);
 	font-family: 'Press Start 2P', cursive;
 	font-size: 14px;
-	margin-top: 15px;
+	margin-top: 25px;
 	line-height: 130%;
 }
 .score {
@@ -294,7 +294,8 @@ h4 {
 		margin-left: 80px;
 		width: 100vw;
 	}
-	.dashes, .alpha {
+	.dashes,
+	.alpha {
 		height: 24px;
 		width: 24px;
 		font-size: 22px;
