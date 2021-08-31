@@ -1,10 +1,10 @@
 # BuildAMinion
 
-**An embedded screenshot of the app**
+**APP Screenshot**
 ![image](https://i.ibb.co/r7Cv3Hw/Screenshot-2.png)
 ![image](https://i.ibb.co/HFcZkBv/Screenshot-2.png)
 
-**List of the Technologies used**
+**Technologies used**
 - HTML
 - CSS
 - JavaScript
@@ -18,7 +18,7 @@
 - Open the index.html file in your browser
 - Start playing!
 
-**Your User stories – who are your users, what do they want and why?**
+**User stories – who are the users, what do they want and why?**
 ***User Stories***
 - As a player, I want to learn about the game so that I know how to play correctly.
 - As a player, I want to enter in any word I want so that I can have fun with my friends.
@@ -30,11 +30,12 @@
 - As a player, I want to be able to play with a friend or against the computer so that I can play no matter who I am with.
 - As a player, I want a clear ending to the game so that I know who won.
 
-***Who are your users:***
+***Who are the users:***
 - Anyone who wants to play the game! 
 - Has either a computer, tablet, or smart phone.
 
-**Your Wireframes – sketches of major views / interfaces in your application**
+**Wireframes**
+
 ![image](https://media.git.generalassemb.ly/user/37826/files/e25ceb00-05e6-11ec-87fa-efb6a2f77309)
 
 ![image](https://media.git.generalassemb.ly/user/37826/files/ee48ad00-05e6-11ec-9dae-dee35e261c03)
@@ -42,12 +43,11 @@
 ![image](https://media.git.generalassemb.ly/user/37826/files/f86aab80-05e6-11ec-956e-63f6ee28e630)
 
 
-**Unsolved problems or major hurdles you had to overcome**
+**Unsolved problems or major hurdles**
 
 ***Major Hurdles***
 - How to use flexbox to style the page how I wanted it
-- How to solve discrepancies in the branches
-- 
+- How to resolve discrepancies in the branches
 
 ***Unsolved Problems***
 - Mobile compatability! My game will look great on one phone, but awful on a different phone! 
