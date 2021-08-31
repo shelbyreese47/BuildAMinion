@@ -1,17 +1,17 @@
 # BuildAMinion
 
-**APP Screenshot**
+**APP Screenshots:**
 ![image](https://i.ibb.co/r7Cv3Hw/Screenshot-2.png)
 ![image](https://i.ibb.co/HFcZkBv/Screenshot-2.png)
 
-**Technologies used**
+**Technologies used:**
 - HTML
 - CSS
 - JavaScript
 - pixlr.com (to cut out images)
 - imgbb.com (a free online image host)
 
-**Installation instructions**
+**Installation instructions:**
 - fork and clone the repo
 - cd into the repo
 - Open the entire folder in VScode
@@ -19,7 +19,8 @@
 - Start playing!
 
 **User stories – who are the users, what do they want and why?**
-***User Stories***
+
+***User Stories:***
 - As a player, I want to learn about the game so that I know how to play correctly.
 - As a player, I want to enter in any word I want so that I can have fun with my friends.
 - As a player, I want to see how many words are in the phrase and how many letters are in each word so that I can guess more easily.
@@ -34,7 +35,7 @@
 - Anyone who wants to play the game! 
 - Has either a computer, tablet, or smart phone.
 
-**Wireframes**
+**Wireframes:**
 
 ![image](https://media.git.generalassemb.ly/user/37826/files/e25ceb00-05e6-11ec-87fa-efb6a2f77309)
 
@@ -45,11 +46,11 @@
 
 **Unsolved problems or major hurdles**
 
-***Major Hurdles***
+***Major Hurdles:***
 - How to use flexbox to style the page how I wanted it
 - How to resolve discrepancies in the branches
 
-***Unsolved Problems***
+***Unsolved Problems:***
 - Mobile compatability! My game will look great on one phone, but awful on a different phone! 
     - It also looks great on the chrome 'iphone' but not on my actual iphone
 - Styling! 
