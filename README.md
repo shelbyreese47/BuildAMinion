@@ -1,11 +1,15 @@
 # BuildAMinion
+
 **An embedded screenshot of the app**
-- 
+![image](https://i.ibb.co/r7Cv3Hw/Screenshot-2.png)
+![image](https://i.ibb.co/HFcZkBv/Screenshot-2.png)
+
 **List of the Technologies used**
 - HTML
 - CSS
 - JavaScript
-- pixlr.com
+- pixlr.com (to cut out images)
+- imgbb.com (a free online image host)
 
 **Installation instructions**
 - fork and clone the repo
@@ -37,5 +41,18 @@
 
 ![image](https://media.git.generalassemb.ly/user/37826/files/f86aab80-05e6-11ec-956e-63f6ee28e630)
 
+
 **Unsolved problems or major hurdles you had to overcome**
-- How to use flexbox to style the page how I wanted it.
+
+***Major Hurdles***
+- How to use flexbox to style the page how I wanted it
+- How to solve discrepancies in the branches
+- 
+
+***Unsolved Problems***
+- Mobile compatability! My game will look great on one phone, but awful on a different phone! 
+    - It also looks great on the chrome 'iphone' but not on my actual iphone
+- Styling! 
+    - The empty boxes aren't centered on the screen- they're centered on the div
+        - I know I can make the div 100vw to solve this, but then the mobile compatability really messes up
+    - The boxes next to Level 01 will not line up with the lower level boxes! 
