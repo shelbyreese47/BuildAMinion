@@ -1,4 +1,6 @@
 # BuildAMinion
+## Stop Balthazar Game!
+***Balthazar has taken over Gru's lab and is making evil minions! Help Gru and his minions by guessing words correctly***
 
 **APP Screenshots:**
 ![image](https://i.ibb.co/r7Cv3Hw/Screenshot-2.png)
